@@ -1,0 +1,4 @@
+- la liste des competences dans la section "Compétences & Expertise" doit etre unifié avec la constellation de 
+competences dans la section "À propos de moi"
+
+- 
