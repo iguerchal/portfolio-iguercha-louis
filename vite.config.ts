@@ -4,7 +4,7 @@
   import path from 'path';
 
   export default defineConfig({
-    base: 'portfolio-iguercha-louis', // <--- très important pour GitHub Pages
+    base: '/portfolio-iguercha-louis/', // <--- très important pour GitHub Pages
     plugins: [react()],
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
