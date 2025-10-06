@@ -2,7 +2,7 @@
     "name": "One-Page Portfolio Website UI",
     "version": "1.0.0",
     "private": true,
-    "homepage": "https://<ton-nom-utilisateur>.github.io/<nom-du-repo>/",
+    "homepage": "https://iguerchal.github.io/portfolio-iguercha-louis/",
     "dependencies": {
       "@radix-ui/react-accordion": "^1.2.3",
       "@radix-ui/react-alert-dialog": "^1.1.6",
