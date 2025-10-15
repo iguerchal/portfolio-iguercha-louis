@@ -78,7 +78,7 @@ const Hero = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
               >
-                web-developper freelance
+                Creative developer — Full-stack
               </motion.span>
             </motion.h1>
 
@@ -88,8 +88,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              Création de solutions web innovantes avec des technologies de pointe et un design créatif.
-              Construisons quelque chose d'exceptionnel ensemble.
+              Création d’expériences numériques innovantes (web, applications, jeux, SaaS) avec des technologies de pointe et un design créatif. Construisons quelque chose d’exceptionnel ensemble.
             </motion.p>
 
             <motion.div

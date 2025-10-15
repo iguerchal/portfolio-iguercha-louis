@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import { motion } from 'motion/react';
-import { Download, Star } from 'lucide-react';
+import { Dialog, DialogContent, DialogOverlay, DialogTrigger, DialogClose, DialogTitle } from './ui/dialog';
+import { Download, Star, Maximize2, X } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card } from './ui/card';
 
@@ -19,7 +20,7 @@ const About = () => {
     {
       year: '2022',
       title: 'Développement Full-Stack',
-      description: 'Extension des compétences aux technologies backend et bases de données'
+      description: "Extension des compétences aux technologies backend ,bases de données et prise en charge de differents projets d'applications, jeux, SaaS"
     },
     {
       year: '2023',
@@ -30,6 +31,11 @@ const About = () => {
       year: '2024',
       title: 'Innovation créative',
       description: 'Spécialisation en solutions web créatives et expériences utilisateur'
+    },
+    {
+      year: '2025',
+      title: 'Continuation de la carrière freelance',
+      description: "..."
     }
   ];
 
@@ -59,6 +65,65 @@ const About = () => {
   ];
 
   const getSkillId = (name: string) => `skill-${name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+
+  // Small presentational surface for the constellation; reused in card and modal
+  const ConstellationSurface: React.FC<{
+    nodeSizeMultiplier?: number;
+    interactive?: boolean;
+    full?: boolean;
+  }> = ({ nodeSizeMultiplier = 1, interactive = true, full = false }) => (
+    <div className={`relative ${full ? 'h-full' : 'h-80'} bg-gradient-to-br from-muted/50 to-background rounded-lg overflow-hidden`}>
+      {/* Lignes de connexion */}
+      <svg className="absolute inset-0 w-full h-full">
+        {constellation.edges.map(([a, b], i) => (
+          <motion.line
+            key={`edge-${i}`}
+            x1={`${constellation.nodes[a].x}%`}
+            y1={`${constellation.nodes[a].y}%`}
+            x2={`${constellation.nodes[b].x}%`}
+            y2={`${constellation.nodes[b].y}%`}
+            stroke="rgba(138, 43, 226, 0.25)"
+            strokeWidth="1"
+            {...(full
+              ? { initial: { opacity: 0 }, animate: { opacity: 1 }, transition: { duration: 0.6, delay: i * 0.01 } }
+              : { initial: { pathLength: 0, opacity: 0 }, whileInView: { pathLength: 1, opacity: 1 }, transition: { duration: 1.2, delay: i * 0.01 }, viewport: { once: true } }
+            )}
+          />
+        ))}
+      </svg>
+
+      {/* Nœuds */}
+      {constellation.nodes.map((n, index) => (
+        <motion.button
+          key={n.name}
+          style={{ left: `${n.x}%`, top: `${n.y}%`, width: n.size * 4 * nodeSizeMultiplier, height: n.size * 4 * nodeSizeMultiplier }}
+          className="absolute -translate-x-1/2 -translate-y-1/2 rounded-full neon-glow-sm bg-gradient-to-r from-primary to-secondary text-primary-foreground flex items-center justify-center focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 group"
+          {...(full
+            ? { initial: { opacity: 0, scale: 0.9 }, animate: { opacity: 1, scale: 1 }, transition: { duration: 0.3, delay: index * 0.02 } }
+            : { initial: { opacity: 0, scale: 0 }, whileInView: { opacity: 1, scale: 1 }, transition: { duration: 0.4, delay: index * 0.03 }, viewport: { once: true } }
+          )}
+          onClick={interactive ? () => {
+            const el = document.getElementById(getSkillId(n.name));
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          } : undefined}
+          onKeyDown={interactive ? (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); const el = document.getElementById(getSkillId(n.name)); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); } } : undefined}
+          aria-label={`Voir la compétence ${n.name}`}
+        >
+          <Star className="text-primary-foreground" size={Math.min(n.size, 14)} />
+          <span className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 bg-background rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity shadow-md border border-border">
+            {n.name}
+          </span>
+        </motion.button>
+      ))}
+
+      {/* Note */}
+      <div className="absolute bottom-4 left-4 text-xs text-muted-foreground">
+        <span className="bg-primary/20 px-2 py-1 rounded">
+          💡 Survolez ou cliquez sur les étoiles pour naviguer
+        </span>
+      </div>
+    </div>
+  );
 
   const constellation = useMemo(() => {
     const nodes = allSkills.map((s, index) => {
@@ -111,16 +176,15 @@ const About = () => {
             className="space-y-8"
           >
             <Card className="glass-morphism p-8 space-y-6">
-              <h3 className="text-2xl text-primary mb-4">Mon parcours</h3>
+              <h3 className="text-2xl text-primary mb-4">Présentation professionnel</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Je suis un développeur créatif qui fait le lien entre design et technologie.
-                Avec plus de 4 ans d’expérience en développement web, je conçois des
-                expériences numériques immersives, à la fois esthétiques et performantes.
+                Je suis un développeur créatif qui fait le lien entre design, technologie et interactivité. Fort de plus de 4 ans d’expérience, je conçois des applications, des jeux et des expériences web immersives, à la fois esthétiques, performantes et intuitives.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Ma passion est d’explorer l’intersection entre créativité et code, en repoussant
-                sans cesse les limites du possible sur le web. Je crois qu’un excellent logiciel
-                doit être à la fois fonctionnel et agréable à utiliser.
+                Ma passion est d’explorer l’intersection entre créativité, code et expérience utilisateur, en repoussant sans cesse les limites du possible — que ce soit sur le web, dans une app ou dans un jeu.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                Je crois qu’un excellent produit numérique doit être fonctionnel, fluide et plaisant à utiliser, quelle que soit sa plateforme.
               </p>
               
               {/* Bouton CV retiré à la demande: on conserve uniquement le texte du parcours */}
@@ -164,60 +228,81 @@ const About = () => {
             viewport={{ once: true }}
             className="space-y-8"
           >
-            <Card className="glass-morphism p-8">
-              <h3 className="text-2xl text-primary mb-8 text-center">Constellation de compétences</h3>
-              <div className="relative h-80 bg-gradient-to-br from-muted/50 to-background rounded-lg overflow-hidden">
-                {/* Lignes de connexion */}
-                <svg className="absolute inset-0 w-full h-full">
-                  {constellation.edges.map(([a, b], i) => (
-                    <motion.line
-                      key={`edge-${i}`}
-                      x1={`${constellation.nodes[a].x}%`}
-                      y1={`${constellation.nodes[a].y}%`}
-                      x2={`${constellation.nodes[b].x}%`}
-                      y2={`${constellation.nodes[b].y}%`}
-                      stroke="rgba(138, 43, 226, 0.25)"
-                      strokeWidth="1"
-                      initial={{ pathLength: 0, opacity: 0 }}
-                      whileInView={{ pathLength: 1, opacity: 1 }}
-                      transition={{ duration: 1.2, delay: i * 0.01 }}
-                      viewport={{ once: true }}
-                    />
-                  ))}
-                </svg>
-
-                {/* Nœuds */}
-                {constellation.nodes.map((n, index) => (
-                  <motion.button
-                    key={n.name}
-                    style={{ left: `${n.x}%`, top: `${n.y}%`, width: n.size * 4, height: n.size * 4 }}
-                    className="absolute -translate-x-1/2 -translate-y-1/2 rounded-full neon-glow-sm bg-gradient-to-r from-primary to-secondary text-primary-foreground flex items-center justify-center focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 group"
-                    initial={{ opacity: 0, scale: 0 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.4, delay: index * 0.03 }}
-                    viewport={{ once: true }}
-                    onClick={() => {
-                      const el = document.getElementById(getSkillId(n.name));
-                      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }}
-                    onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); const el = document.getElementById(getSkillId(n.name)); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }}
-                    aria-label={`Voir la compétence ${n.name}`}
-                  >
-                    <Star className="text-primary-foreground" size={Math.min(n.size, 14)} />
-                    <span className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 bg-background rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity shadow-md border border-border">
-                      {n.name}
-                    </span>
-                  </motion.button>
-                ))}
-
-                {/* Note */}
-                <div className="absolute bottom-4 left-4 text-xs text-muted-foreground">
-                  <span className="bg-primary/20 px-2 py-1 rounded">
-                    💡 Survolez ou cliquez sur les étoiles pour naviguer
-                  </span>
+            <Dialog>
+              <Card className="glass-morphism p-8">
+                <div className="flex items-center justify-between mb-6">
+                  <h3 className="text-2xl text-primary">Constellation de compétences</h3>
+                  <DialogTrigger asChild>
+                    <button type="button" aria-label="Plein écran" className="inline-flex items-center justify-center size-9 rounded-md hover:bg-accent">
+                      <Maximize2 size={18} />
+                    </button>
+                  </DialogTrigger>
                 </div>
-              </div>
-            </Card>
+                <ConstellationSurface />
+              </Card>
+              <DialogContent
+                className="h-[70vh] w-[75vw] max-w-none sm:max-w-none overflow-hidden rounded-xl p-0 bg-transparent ring-1 ring-black/15 dark:ring-black/40 shadow-[0_24px_80px_rgba(0,0,0,0.55)] dark:shadow-[0_24px_80px_rgba(0,0,0,0.6)]"
+                style={{ width: '75vw', height: '70vh' }}
+              >
+                <motion.div
+                  className="h-full w-full rounded-xl p-[2px] bg-gradient-to-r from-primary/70 via-secondary/70 to-primary/70 dark:from-primary/90 dark:via-secondary/90 dark:to-primary/90 drop-shadow-xl"
+                  style={{ backgroundSize: '200% 200%' }}
+                  animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
+                  transition={{ duration: 14, repeat: Infinity, ease: 'linear' }}
+                >
+                  <div className="h-full w-full rounded-[calc(theme(borderRadius.xl)-2px)] bg-background border border-border flex flex-col min-h-0">
+                    <div className="p-3">
+                      <div className="flex items-center justify-between mb-6">
+                        <DialogTitle className="text-2xl text-primary">Constellation de compétences</DialogTitle>
+                        <DialogClose asChild>
+                          <Button size="icon" variant="ghost" aria-label="Fermer">
+                            <X size={18} />
+                          </Button>
+                        </DialogClose>
+                      </div>
+                    </div>
+                    <div className="flex-1 min-h-0 p-3">
+                      <div className="h-full w-full rounded-lg bg-gradient-to-br from-muted/50 to-background">
+                        <div className="relative h-full rounded-lg overflow-hidden">
+                          <svg className="absolute inset-0 w-full h-full">
+                            {constellation.edges.map(([a, b], i) => (
+                              <motion.line
+                                key={`fs-edge-${i}`}
+                                x1={`${constellation.nodes[a].x}%`}
+                                y1={`${constellation.nodes[a].y}%`}
+                                x2={`${constellation.nodes[b].x}%`}
+                                y2={`${constellation.nodes[b].y}%`}
+                                stroke="rgba(138, 43, 226, 0.35)"
+                                strokeWidth="1"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ duration: 0.6, delay: i * 0.01 }}
+                              />
+                            ))}
+                          </svg>
+                          {constellation.nodes.map((n, index) => (
+                            <motion.button
+                              key={`fs-node-${n.name}`}
+                              style={{ left: `${n.x}%`, top: `${n.y}%`, width: n.size * 5.6, height: n.size * 5.6 }}
+                              className="absolute -translate-x-1/2 -translate-y-1/2 rounded-full neon-glow-sm bg-gradient-to-r from-primary to-secondary text-primary-foreground flex items-center justify-center focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 group"
+                              initial={{ opacity: 0, scale: 0.9 }}
+                              animate={{ opacity: 1, scale: 1 }}
+                              transition={{ duration: 0.3, delay: index * 0.02 }}
+                              aria-label={`Voir la compétence ${n.name}`}
+                            >
+                              <Star className="text-primary-foreground" size={Math.min(n.size + 6, 18)} />
+                              <span className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 bg-background/90 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity shadow-md border border-border">
+                                {n.name}
+                              </span>
+                            </motion.button>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              </DialogContent>
+            </Dialog>
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4">

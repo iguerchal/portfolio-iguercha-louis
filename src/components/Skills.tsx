@@ -112,10 +112,7 @@ const Skills = () => {
                   type: "spring",
                   stiffness: 100
                 }}
-                whileHover={{ 
-                  scale: 1.1,
-                  boxShadow: "0 0 20px rgba(138, 43, 226, 0.5)"
-                }}
+                whileHover={{ scale: 1.1 }}
                 viewport={{ once: true }}
                 className="group"
               >
@@ -133,69 +130,11 @@ const Skills = () => {
                     whileHover={{ x: '0%' }}
                     transition={{ duration: 0.3 }}
                   />
-                  
-                  {/* Progress indicator */}
-                  <div className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-primary to-secondary opacity-0 group-hover:opacity-100 transition-opacity"
-                       style={{ width: `${skill.level}%` }} />
                 </Badge>
               </motion.div>
             ))}
           </div>
         </motion.div>
-
-        {/* Detailed Skills by Category */}
-        <div className="grid md:grid-cols-3 gap-8">
-          {skillCategories.map((category, categoryIndex) => (
-            <motion.div
-              key={category.title}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: categoryIndex * 0.2 }}
-              viewport={{ once: true }}
-              className="glass-morphism p-8 rounded-xl"
-            >
-              <h3 className="text-2xl font-semibold text-primary mb-6 text-center">
-                {category.title}
-              </h3>
-              
-              <div className="space-y-4">
-                {category.skills.map((skill, skillIndex) => (
-                  <motion.div
-                    key={skill.name}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ 
-                      duration: 0.5, 
-                      delay: (categoryIndex * 0.2) + (skillIndex * 0.1)
-                    }}
-                    viewport={{ once: true }}
-                    className="space-y-2"
-                  >
-                    <div className="flex justify-between items-center">
-                      <span className="text-foreground" id={getSkillId(skill.name)}>{skill.name}</span>
-                      <span className="text-sm text-muted-foreground">{skill.level}%</span>
-                    </div>
-                    
-                    <div className="h-2 bg-muted rounded-full overflow-hidden">
-                      <motion.div
-                        className="h-full bg-gradient-to-r from-primary to-secondary rounded-full"
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        transition={{ 
-                          duration: 1, 
-                          delay: (categoryIndex * 0.2) + (skillIndex * 0.1) + 0.5,
-                          ease: "easeOut"
-                        }}
-                        viewport={{ once: true }}
-                      />
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
         {/* Constellation supprimée (unifiée désormais dans About) */}
       </div>
     </section>
