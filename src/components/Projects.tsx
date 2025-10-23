@@ -33,20 +33,27 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: 'SaaS Analytics – Tableau de bord',
+      title: 'MoodBoard Studio — Outil de moodboards UI/UX',
       category: 'Frontend',
-      description: 'Tableau de bord interactif (charts, filtres, thèmes) pour KPIs d’un SaaS.',
-      longDescription: 'Interface riche avec graphiques dynamiques, mode sombre/clair, export et vues personnalisées. Animations fluides et accessibilité soignée.',
-      tags: ['React', 'Recharts', 'Zustand', 'Tailwind'],
-      image: 'https://images.unsplash.com/photo-1551281044-8d8eec5f6f5f?auto=format&fit=crop&w=1200&q=60',
-      link: '#',
-      github: '#',
+      description: 'Création de moodboards UI/UX avec export image/PDF, IA (mock), layouts et QA.',
+      longDescription:
+        'MoodBoard Studio est un outil React/TypeScript permettant de composer rapidement des moodboards pour des projets UI/UX. ' +
+        'Il intègre une IA simulée pour générer palettes, typographies et éléments, des arrangeurs de layout (Grid, Masonry, Circle Pack, Editorial) et un auto‑arrange. ' +
+        'L’export avancé prend en charge PNG/JPG/WebP/SVG et PDF (pages palette/assets). Les Google Fonts sont chargées dynamiquement et l’app persiste thème, layout et éléments localement. ' +
+        'Un Contrast Checker (WCAG) facilite l’accessibilité, une Command Palette (Cmd/Ctrl+K) accélère les actions et un Story Mode permet de présenter le board sous forme de timeline.',
+      tags: ['React', 'TypeScript', 'Vite', 'shadcn/ui', 'Radix UI', 'Framer Motion', 'Tailwind CSS', 'html-to-image', 'jsPDF'],
+      image: new URL('../img/moodboard_studio_thumbnail.PNG', import.meta.url).toString(),
+      link: 'https://iguerchal.github.io/Moodboard_Studio',
+      github: 'https://github.com/iguerchal/Moodboard_Studio',
       features: [
-        'Filtres multi‑critères',
-        'Charts interactifs',
-        'Export CSV/PDF',
-        'Thème sombre/clair',
-        'Layouts sauvegardés'
+        'Drag & Drop (texte, couleurs, formes)',
+        'IA (mock) Prompt‑to‑Board et suggestions (palettes, typos, éléments)',
+        'Arrangeurs: Grid, Masonry, Circle Pack, Editorial, Auto‑arrange',
+        'Export image (PNG/JPG/WebP/SVG) et PDF (palette + assets)',
+        'Google Fonts dynamiques; changement de police par bloc',
+        'Persistance locale (thème, layout, éléments) et Command Palette',
+        'Contrast Checker (WCAG) avec correction auto',
+        'Story Mode: timeline et lecture auto'
       ]
     },
     {
