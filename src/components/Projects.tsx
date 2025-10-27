@@ -58,20 +58,24 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: 'Application de gestion de tâches',
-      category: 'Full‑Stack',
-      description: 'Gestion collaborative des tâches avec mises à jour en temps réel.',
-      longDescription: 'Kanban collaboratif en temps réel: glisser‑déposer, mentions, notifications, pièces jointes et rôles. API sécurisée et performances maîtrisées.',
-      tags: ['Next.js', 'Socket.io', 'MongoDB'],
-      image: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=60',
-      link: '#',
-      github: '#',
+      title: 'RoCart Boutique – Catalogue produits',
+      category: 'Frontend',
+      description: 'Catalogue e‑commerce avec barre Hot Items défilante et filtres par rareté/prix.',
+      longDescription:
+        'Mise en avant d’un catalogue e‑commerce performant avec une barre « Hot Items » défilante (best‑sellers & nouveautés) et un système de filtres multi‑critères (rareté, prix, catégorie). ' +
+        'L’interface est responsive et orientée conversion, avec cartes produit, CTA clairs et SEO de base pour le trafic organique. ' +
+        'Architecture front propre en HTML/CSS/JavaScript, animations légères pour la mise en valeur des produits et structure scalable pour enrichir le catalogue.',
+      tags: ['HTML', 'CSS', 'JavaScript', 'Carousel', 'Filtrage', 'Responsive', 'SEO'],
+      image: new URL('../img/rocart shop.PNG', import.meta.url).toString(),
+      link: 'https://iguerchal.github.io/test_landing_page',
+      github: 'https://github.com/iguerchal/test_landing_page',
       features: [
-        'Real-time collaboration',
-        'Drag-and-drop interface',
-        'Time tracking',
-        'Team management',
-        'Advanced reporting'
+        'Barre « Hot Items » défilante',
+        'Filtres par rareté, prix et catégorie',
+        'Cartes produit visuelles avec highlights',
+        'CTA orientés conversion (voir/acheter)',
+        'Design responsive mobile‑first',
+        'Bonnes pratiques SEO de base'
       ]
     },
     {
