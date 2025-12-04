@@ -89,7 +89,7 @@ const Projects = () => {
         'un panneau d’admin (utilisateurs, rôles, logs d’audit) et un pack marketing (docs et listings). ' +
         'Stack moderne: Next.js 15, TypeScript, Prisma, Auth.js, Stripe, Resend. Démo en ligne et mode démo.',
       tags: ['Next.js', 'TypeScript', 'Prisma', 'Auth.js', 'Stripe', 'Resend'],
-      image: new URL('../img/ssk_dashboard_thumbnail.png', import.meta.url).toString(),
+      image: new URL('../img/landing.png', import.meta.url).toString(),
       link: 'https://ssk-demo.vercel.app',
       github: 'https://louigch.gumroad.com/l/rrddn',
       features: [
