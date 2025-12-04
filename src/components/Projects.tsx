@@ -80,20 +80,25 @@ const Projects = () => {
     },
     {
       id: 4,
-      title: 'Dashboard IA – Data‑viz',
-      category: 'Frontend',
-      description: 'Tableau de bord data‑viz avec insights IA et analytique prédictive.',
-      longDescription: 'Un tableau de bord intelligent exploitant l’IA pour fournir des insights actionnables à partir de jeux de données complexes. Graphiques interactifs, analytique prédictive, widgets personnalisables. Pensé pour l’échelle et le temps réel.',
-      tags: ['Vue.js', 'D3.js', 'Python'],
-      image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1200&q=60',
-      link: '#',
-      github: '#',
+      title: 'SaaS Starter Kit Factory',
+      category: 'Full‑Stack',
+      description: 'Starter kit SaaS complet: Auth, dashboard, billing Stripe, API, admin, docs.',
+      longDescription:
+        'De l’idée à un SaaS opérationnel en un week‑end: un kit complet prêt à cloner comprenant authentification (password, magic link, OAuth Google, reset, vérification email), ' +
+        'un dashboard moderne, la facturation Stripe (plans, webhooks, portail client), une API publique (clés, quotas, endpoint d’exemple), ' +
+        'un panneau d’admin (utilisateurs, rôles, logs d’audit) et un pack marketing (docs et listings). ' +
+        'Stack moderne: Next.js 15, TypeScript, Prisma, Auth.js, Stripe, Resend. Démo en ligne et mode démo.',
+      tags: ['Next.js', 'TypeScript', 'Prisma', 'Auth.js', 'Stripe', 'Resend'],
+      image: new URL('../img/ssk_dashboard_thumbnail.png', import.meta.url).toString(),
+      link: 'https://ssk-demo.vercel.app',
+      github: 'https://louigch.gumroad.com/l/rrddn',
       features: [
-        'AI-powered insights',
-        'Interactive data visualization',
-        'Predictive analytics',
-        'Customizable widgets',
-        'Real-time data processing'
+        'Auth complète (password, magic link, OAuth Google, reset, vérification email)',
+        'Dashboard moderne prêt à brander',
+        'Billing Stripe (plans, webhooks, portail client)',
+        'API publique (clés API, quotas, endpoint d’exemple)',
+        'Admin panel (utilisateurs, rôles, logs d’audit)',
+        'Docs & marketing (guides, listings, captures) et mode démo'
       ]
     }
   ];

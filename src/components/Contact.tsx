@@ -137,6 +137,25 @@ const Contact = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
+            {/* Availability Status (moved above the form) */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="mb-6"
+            >
+              <Card className="glass-morphism p-6 text-center">
+                <div className="flex items-center justify-center space-x-2 mb-2">
+                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
+                  <span className="text-green-500 font-medium">Disponible pour des projets</span>
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  Actuellement disponible pour de nouveaux projets
+                </p>
+              </Card>
+            </motion.div>
+
             <Card className="glass-morphism p-8">
               <h3 className="text-2xl font-semibold text-foreground mb-6">Envoyer un message</h3>
 
@@ -304,23 +323,6 @@ const Contact = () => {
               </div>
             </Card>
 
-            {/* Availability Status */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1 }}
-              viewport={{ once: true }}
-            >
-              <Card className="glass-morphism p-6 text-center">
-                <div className="flex items-center justify-center space-x-2 mb-2">
-                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
-                  <span className="text-green-500 font-medium">Disponible pour des projets</span>
-                </div>
-                <p className="text-sm text-muted-foreground">
-                  Actuellement disponible pour de nouveaux projets
-                </p>
-              </Card>
-            </motion.div>
           </motion.div>
         </div>
 
