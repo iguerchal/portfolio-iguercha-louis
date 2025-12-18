@@ -251,8 +251,8 @@ const Projects = () => {
           ))}
         </div>
 
-        <div className="mt-14 flex flex-col items-center gap-4">
-          <div className="flex items-center space-x-5 rounded-full bg-gradient-to-r from-primary/70 to-secondary/70 px-4 py-3 text-foreground shadow-[0_8px_40px_rgba(138,43,226,0.45)] ring-1 ring-primary/40 dark:text-white">
+        <div className="mt-16 flex flex-col items-center gap-5">
+          <div className="flex items-center space-x-5 rounded-full bg-gradient-to-r from-primary/80 to-secondary/80 px-6 py-4 text-foreground dark:text-white shadow-[0_10px_60px_rgba(138,43,226,0.55)] ring-1 ring-primary/50">
             <Button
               variant="ghost"
               size="sm"
