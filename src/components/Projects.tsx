@@ -7,6 +7,9 @@ import { Badge } from './ui/badge';
 import { Dialog, DialogContent } from './ui/dialog';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
+const gradientPlaceholderImage =
+  'data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22800%22%20height%3D%22420%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23c084fc%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%231d1836%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23g)%22/%3E%3C/svg%3E';
+
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [currentPage, setCurrentPage] = useState(0);
@@ -19,7 +22,7 @@ const Projects = () => {
       description: 'site vitrine realisé pour Amir, coach sportif independant, présentant son activité et ses services avec formulaire de contact.',
       longDescription: 'Site vitrine moderne pour un coach sportif indépendant. Stack: React + TypeScript avec Vite et Tailwind CSS. Intégration du formulaire de contact, mise en avant des offres et témoignages, CTA clairs. Déployé sur GitHub Pages avec SEO de base et performances optimisées.',
       tags: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'GitHub Pages'],
-      image: new URL('../img/amir-fitness-site-vitrine.png', import.meta.url).toString(),
+      image: gradientPlaceholderImage,
       link: 'https://iguerchal.github.io/amir-fitness-site-vitrine',
       github: 'https://github.com/iguerchal/amir-fitness-site-vitrine',
       features: [
@@ -104,20 +107,20 @@ const Projects = () => {
     },
     {
       id: 5,
-      title: 'Projet en attente',
-      category: 'Template',
-      description: 'Carte tampon pour la page 2, détails à renseigner plus tard.',
+      title: 'Coming Soon',
+      category: 'Upcoming',
+      description: 'Un nouveau projet est en préparation, les infos suivront bientôt.',
       longDescription:
-        'Placeholder en attendant les informations du prochain projet. Tu pourras remplacer l’image, les textes et les liens sans toucher au layout existant.',
-      tags: ['Template'],
+        'Cette carte indique que la page 2 contient un projet en cours de finalisation. Dès que tous les éléments marketing et techniques sont prêts, je remplacerai ce contenu par les détails complets.',
+      tags: ['Coming Soon'],
       image: new URL('../img/amir-fitness-site-vitrine.png', import.meta.url).toString(),
       link: '#',
       github: '#',
       features: [
-        'Page 2 prête à être remplie',
+        'Story en attente',
+        'Contenu modifiable rapidement',
         'CTA désactivés (#)',
-        'Structure identique aux autres cartes',
-        'Parfait pour recevoir un vrai projet bientôt'
+        'Design prêt pour les futures infos'
       ]
     }
   ];
