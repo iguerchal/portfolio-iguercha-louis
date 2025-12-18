@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ExternalLink, Github, X, Eye } from 'lucide-react';
+import { ExternalLink, Github, X, Eye, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card } from './ui/card';
 import { Badge } from './ui/badge';
@@ -122,10 +122,12 @@ const Projects = () => {
     }
   ];
 
+  type ProjectItem = (typeof projects)[number];
+  const projectsPerPage = 4;
+  const projectPages: ProjectItem[][] = [];
+
   const isHttpUrl = (url?: string) => typeof url === 'string' && /^https?:\/\//.test(url);
 
-  const projectsPerPage = 4;
-  const projectPages = [];
   for (let i = 0; i < projects.length; i += projectsPerPage) {
     projectPages.push(projects.slice(i, i + projectsPerPage));
   }
@@ -249,28 +251,40 @@ const Projects = () => {
           ))}
         </div>
 
-        <div className="mt-10 flex items-center justify-center space-x-3">
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={() => setCurrentPage((prev) => Math.max(0, prev - 1))}
-            disabled={currentPage === 0}
-            className="text-muted-foreground hover:text-primary"
-          >
-            Page précédente
-          </Button>
-          <span className="text-sm text-muted-foreground">
-            Page {currentPage + 1} / {projectPages.length}
-          </span>
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={() => setCurrentPage((prev) => Math.min(projectPages.length - 1, prev + 1))}
-            disabled={currentPage === projectPages.length - 1}
-            className="text-muted-foreground hover:text-primary"
-          >
-            Page suivante
-          </Button>
+        <div className="mt-10 flex flex-col items-center gap-3">
+          <div className="flex items-center space-x-4 rounded-full bg-gradient-to-r from-primary/60 to-secondary/60 p-2 text-white shadow-[0_8px_40px_rgba(138,43,226,0.35)]">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setCurrentPage((prev) => Math.max(0, prev - 1))}
+              disabled={currentPage === 0}
+              className="text-white hover:bg-white/10 data-[disabled]:text-white/40"
+            >
+              <ChevronLeft className="h-4 w-4" />
+            </Button>
+            <span className="text-sm font-semibold tracking-wide">
+              Page {currentPage + 1} / {projectPages.length}
+            </span>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setCurrentPage((prev) => Math.min(projectPages.length - 1, prev + 1))}
+              disabled={currentPage === projectPages.length - 1}
+              className="text-white hover:bg-white/10 data-[disabled]:text-white/40"
+            >
+              <ChevronRight className="h-4 w-4" />
+            </Button>
+          </div>
+          <div className="flex items-center space-x-2 text-xs uppercase tracking-widest text-muted-foreground">
+            {projectPages.map((_, pageIndex) => (
+              <div
+                key={pageIndex}
+                className={`h-1 w-8 rounded-full transition-all duration-300 ${
+                  pageIndex === currentPage ? 'bg-gradient-to-r from-secondary to-primary' : 'bg-border'
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </div>
 
