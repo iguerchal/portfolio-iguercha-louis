@@ -9,6 +9,7 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
+  const [currentPage, setCurrentPage] = useState(0);
 
   const projects = [
     {
@@ -100,10 +101,36 @@ const Projects = () => {
         'Admin panel (utilisateurs, rôles, logs d’audit)',
         'Docs & marketing (guides, listings, captures) et mode démo'
       ]
+    },
+    {
+      id: 5,
+      title: 'Projet en attente',
+      category: 'Template',
+      description: 'Carte tampon pour la page 2, détails à renseigner plus tard.',
+      longDescription:
+        'Placeholder en attendant les informations du prochain projet. Tu pourras remplacer l’image, les textes et les liens sans toucher au layout existant.',
+      tags: ['Template'],
+      image: new URL('../img/amir-fitness-site-vitrine.png', import.meta.url).toString(),
+      link: '#',
+      github: '#',
+      features: [
+        'Page 2 prête à être remplie',
+        'CTA désactivés (#)',
+        'Structure identique aux autres cartes',
+        'Parfait pour recevoir un vrai projet bientôt'
+      ]
     }
   ];
 
   const isHttpUrl = (url?: string) => typeof url === 'string' && /^https?:\/\//.test(url);
+
+  const projectsPerPage = 4;
+  const projectPages = [];
+  for (let i = 0; i < projects.length; i += projectsPerPage) {
+    projectPages.push(projects.slice(i, i + projectsPerPage));
+  }
+
+  const currentProjects = projectPages[currentPage] ?? [];
 
   return (
     <section id="projects" className="py-20 relative">
@@ -124,7 +151,7 @@ const Projects = () => {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
+          {currentProjects.map((project, index) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 50 }}
@@ -220,6 +247,30 @@ const Projects = () => {
               </Card>
             </motion.div>
           ))}
+        </div>
+
+        <div className="mt-10 flex items-center justify-center space-x-3">
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => setCurrentPage((prev) => Math.max(0, prev - 1))}
+            disabled={currentPage === 0}
+            className="text-muted-foreground hover:text-primary"
+          >
+            Page précédente
+          </Button>
+          <span className="text-sm text-muted-foreground">
+            Page {currentPage + 1} / {projectPages.length}
+          </span>
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => setCurrentPage((prev) => Math.min(projectPages.length - 1, prev + 1))}
+            disabled={currentPage === projectPages.length - 1}
+            className="text-muted-foreground hover:text-primary"
+          >
+            Page suivante
+          </Button>
         </div>
       </div>
 
