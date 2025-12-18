@@ -252,7 +252,7 @@ const Projects = () => {
         </div>
 
         <div className="mt-14 flex flex-col items-center gap-4">
-          <div className="flex items-center space-x-5 rounded-full bg-gradient-to-r from-primary/70 to-secondary/70 px-4 py-3 text-white shadow-[0_8px_40px_rgba(138,43,226,0.45)]">
+          <div className="flex items-center space-x-5 rounded-full bg-gradient-to-r from-primary/70 to-secondary/70 px-4 py-3 text-foreground shadow-[0_8px_40px_rgba(138,43,226,0.45)] ring-1 ring-primary/40 dark:text-white">
             <Button
               variant="ghost"
               size="sm"
@@ -262,7 +262,7 @@ const Projects = () => {
                 setCurrentPage((prev) => Math.max(0, prev - 1));
               }}
               disabled={currentPage === 0}
-              className="text-white hover:bg-white/10 data-[disabled]:text-white/40"
+              className="text-foreground hover:bg-white/10 data-[disabled]:text-muted-foreground/50 dark:text-white"
             >
               <ChevronLeft className="h-4 w-4" />
             </Button>
@@ -278,7 +278,7 @@ const Projects = () => {
                 setCurrentPage((prev) => Math.min(projectPages.length - 1, prev + 1));
               }}
               disabled={currentPage === projectPages.length - 1}
-              className="text-white hover:bg-white/10 data-[disabled]:text-white/40"
+              className="text-foreground hover:bg-white/10 data-[disabled]:text-muted-foreground/50 dark:text-white"
             >
               <ChevronRight className="h-4 w-4" />
             </Button>
@@ -288,7 +288,7 @@ const Projects = () => {
               <div
                 key={pageIndex}
                 className={`h-1 w-8 rounded-full transition-all duration-300 ${
-                  pageIndex === currentPage ? 'bg-gradient-to-r from-secondary to-primary' : 'bg-border'
+                  pageIndex === currentPage ? 'bg-gradient-to-r from-secondary to-primary' : 'bg-muted/30'
                 }`}
               />
             ))}
