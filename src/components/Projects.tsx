@@ -251,12 +251,16 @@ const Projects = () => {
           ))}
         </div>
 
-        <div className="mt-10 flex flex-col items-center gap-3">
+        <div className="mt-14 flex flex-col items-center gap-4">
           <div className="flex items-center space-x-4 rounded-full bg-gradient-to-r from-primary/60 to-secondary/60 p-2 text-white shadow-[0_8px_40px_rgba(138,43,226,0.35)]">
             <Button
               variant="ghost"
               size="sm"
-              onClick={() => setCurrentPage((prev) => Math.max(0, prev - 1))}
+              type="button"
+              onClick={(event) => {
+                event.preventDefault();
+                setCurrentPage((prev) => Math.max(0, prev - 1));
+              }}
               disabled={currentPage === 0}
               className="text-white hover:bg-white/10 data-[disabled]:text-white/40"
             >
@@ -268,7 +272,11 @@ const Projects = () => {
             <Button
               variant="ghost"
               size="sm"
-              onClick={() => setCurrentPage((prev) => Math.min(projectPages.length - 1, prev + 1))}
+              type="button"
+              onClick={(event) => {
+                event.preventDefault();
+                setCurrentPage((prev) => Math.min(projectPages.length - 1, prev + 1));
+              }}
               disabled={currentPage === projectPages.length - 1}
               className="text-white hover:bg-white/10 data-[disabled]:text-white/40"
             >
