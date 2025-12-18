@@ -22,7 +22,7 @@ const Projects = () => {
       description: 'site vitrine realisé pour Amir, coach sportif independant, présentant son activité et ses services avec formulaire de contact.',
       longDescription: 'Site vitrine moderne pour un coach sportif indépendant. Stack: React + TypeScript avec Vite et Tailwind CSS. Intégration du formulaire de contact, mise en avant des offres et témoignages, CTA clairs. Déployé sur GitHub Pages avec SEO de base et performances optimisées.',
       tags: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'GitHub Pages'],
-      image: gradientPlaceholderImage,
+      image: new URL('../img/amir-fitness-site-vitrine.png', import.meta.url).toString(),
       link: 'https://iguerchal.github.io/amir-fitness-site-vitrine',
       github: 'https://github.com/iguerchal/amir-fitness-site-vitrine',
       features: [
@@ -113,7 +113,7 @@ const Projects = () => {
       longDescription:
         'Cette carte indique que la page 2 contient un projet en cours de finalisation. Dès que tous les éléments marketing et techniques sont prêts, je remplacerai ce contenu par les détails complets.',
       tags: ['Coming Soon'],
-      image: new URL('../img/amir-fitness-site-vitrine.png', import.meta.url).toString(),
+      image: gradientPlaceholderImage,
       link: '#',
       github: '#',
       features: [
