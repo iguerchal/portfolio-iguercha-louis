@@ -252,7 +252,7 @@ const Projects = () => {
         </div>
 
         <div className="mt-14 flex flex-col items-center gap-4">
-          <div className="flex items-center space-x-4 rounded-full bg-gradient-to-r from-primary/60 to-secondary/60 p-2 text-white shadow-[0_8px_40px_rgba(138,43,226,0.35)]">
+          <div className="flex items-center space-x-5 rounded-full bg-gradient-to-r from-primary/70 to-secondary/70 px-4 py-3 text-white shadow-[0_8px_40px_rgba(138,43,226,0.45)]">
             <Button
               variant="ghost"
               size="sm"
@@ -283,7 +283,7 @@ const Projects = () => {
               <ChevronRight className="h-4 w-4" />
             </Button>
           </div>
-          <div className="flex items-center space-x-2 text-xs uppercase tracking-widest text-muted-foreground">
+          <div className="flex items-center space-x-3 text-xs uppercase tracking-[0.6em] text-muted-foreground">
             {projectPages.map((_, pageIndex) => (
               <div
                 key={pageIndex}
