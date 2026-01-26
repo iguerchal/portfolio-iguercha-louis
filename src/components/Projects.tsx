@@ -11,53 +11,48 @@ const gradientPlaceholderImage =
   'data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22800%22%20height%3D%22420%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23c084fc%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%231d1836%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23g)%22/%3E%3C/svg%3E';
 
 const Projects = () => {
-  const [selectedProject, setSelectedProject] = useState(null);
-  const [currentPage, setCurrentPage] = useState(0);
-
   const projects = [
     {
       id: 1,
-      title: 'Site vitrine Fitness coaching',
-      category: 'Frontend',
-      description: 'site vitrine realisé pour Amir, coach sportif independant, présentant son activité et ses services avec formulaire de contact.',
-      longDescription: 'Site vitrine moderne pour un coach sportif indépendant. Stack: React + TypeScript avec Vite et Tailwind CSS. Intégration du formulaire de contact, mise en avant des offres et témoignages, CTA clairs. Déployé sur GitHub Pages avec SEO de base et performances optimisées.',
-      tags: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'GitHub Pages'],
-      image: new URL('../img/amir-fitness-site-vitrine.png', import.meta.url).toString(),
-      link: 'https://iguerchal.github.io/amir-fitness-site-vitrine',
-      github: 'https://github.com/iguerchal/amir-fitness-site-vitrine',
+      title: 'Digital Creator',
+      category: 'Full-Stack',
+      description: 'Plateforme SaaS d\'automatisation marketing: création d\'avatars IA, création de produits digitaux et de vidéos de vente.',
+      longDescription:
+        'Digital Creator est une plateforme SaaS complète dédiée à l\'automatisation marketing pour les infopreneurs et entrepreneurs. Elle permet de créer des produits digitaux, générer des avatars IA personnalisés, créer automatiquement des scripts marketing, ajouter des voix IA réalistes à vos avatars, produire des vidéos de vente professionnelles, et monter automatiquement le contenu généré. Intégration Stripe pour la monétisation, FirstPromoter pour les programmes d\'affiliation, et API HeyGen pour la génération d\'avatars. Solution clé-en-main pour automatiser la vente de produits digitaux via vidéos.',
+      tags: ['Next.js', 'TypeScript', 'Node.js', 'PostgreSQL', 'Prisma', 'Stripe', 'FirstPromoter'],
+      image: new URL('../img/digitalCreator_couverture.png', import.meta.url).toString(),
+      link: 'https://www.digitalcreator.app',
+      github: '#',
       features: [
-        'Héros clair avec proposition de valeur',
-        'Présentation des offres de coaching',
-        'Témoignages clients',
-        'Formulaire de contact',
-        'Design responsive (mobile‑first)',
-        'SEO de base (métadonnées, balises sémantiques)',
-        'Déploiement GitHub Pages'
+        'Création d\'une boutique digitale complète et scalable',
+        'Génération d\'avatars IA personnalisés',
+        'Création automatisée de scripts marketing vidéo',
+        'Génération de voix IA pour vos avatars',
+        'Production vidéo automatisée avec avatars générés',
+        'Montage vidéo automatisé et publication en un clic'
       ]
     },
     {
       id: 2,
-      title: 'MoodBoard Studio — Outil de moodboards UI/UX',
-      category: 'Frontend',
-      description: 'Création de moodboards UI/UX avec export image/PDF, IA (mock), layouts et QA.',
+      title: 'BullGpt',
+      category: 'Full-Stack',
+      description: 'Plateforme SaaS d\'analyse IA pour le trading : analysez n\'importe quel graphique en 7 secondes et obtenez des recommandations de trading claires.',
       longDescription:
-        'MoodBoard Studio est un outil React/TypeScript permettant de composer rapidement des moodboards pour des projets UI/UX. ' +
-        'Il intègre une IA simulée pour générer palettes, typographies et éléments, des arrangeurs de layout (Grid, Masonry, Circle Pack, Editorial) et un auto‑arrange. ' +
-        'L’export avancé prend en charge PNG/JPG/WebP/SVG et PDF (pages palette/assets). Les Google Fonts sont chargées dynamiquement et l’app persiste thème, layout et éléments localement. ' +
-        'Un Contrast Checker (WCAG) facilite l’accessibilité, une Command Palette (Cmd/Ctrl+K) accélère les actions et un Story Mode permet de présenter le board sous forme de timeline.',
-      tags: ['React', 'TypeScript', 'Vite', 'shadcn/ui', 'Radix UI', 'Framer Motion', 'Tailwind CSS', 'html-to-image', 'jsPDF'],
-      image: new URL('../img/moodboard_studio_thumbnail.PNG', import.meta.url).toString(),
-      link: 'https://iguerchal.github.io/Moodboard_Studio',
-      github: 'https://github.com/iguerchal/Moodboard_Studio',
+        'BullGpt est une plateforme SaaS révolutionnaire qui démocratise l\'analyse technique du trading grâce à l\'IA. En 7 secondes, le système analyse n\'importe quel graphique et fournit des insights professionnels : identification des niveaux support/résistance, analyse des indicateurs techniques, et deux scénarios avec probabilités (haussier/baissier). ' +
+        'La plateforme intègre un apprentissage adaptatif qui personnalise les recommandations selon votre style de trading (scalping, swing trading, etc.) après environ 10 analyses. ' +
+        'Un coaching personnel via WhatsApp (avec un vrai trader) complète le service pour une guidance adaptée. ' +
+        'Intégration Stripe pour la monétisation et les plans d\'abonnement. Solution clé-en-main pour transformer le trading en automatisant les décisions basées sur des données.',
+      tags: ['Next.js', 'TypeScript', 'Node.js', 'PostgreSQL', 'Prisma', 'Stripe'],
+      image: new URL('../img/Bullgpt_couverture.png', import.meta.url).toString(),
+      link: 'https://www.bullgpt.io',
+      github: '#',
       features: [
-        'Drag & Drop (texte, couleurs, formes)',
-        'IA (mock) Prompt‑to‑Board et suggestions (palettes, typos, éléments)',
-        'Arrangeurs: Grid, Masonry, Circle Pack, Editorial, Auto‑arrange',
-        'Export image (PNG/JPG/WebP/SVG) et PDF (palette + assets)',
-        'Google Fonts dynamiques; changement de police par bloc',
-        'Persistance locale (thème, layout, éléments) et Command Palette',
-        'Contrast Checker (WCAG) avec correction auto',
-        'Story Mode: timeline et lecture auto'
+        'Analyse de graphique IA en 7 secondes avec identification support/résistance',
+        'Apprentissage adaptatif personnalisé selon votre style de trading',
+        'Scénarios haussiers/baissiers avec probabilités et niveaux clés',
+        'Coaching personnel via WhatsApp avec des traders expérimentés',
+        'Suivi d\'historique de trades et analyse du win rate',
+        'Monétisation via plans d\'abonnement flexibles avec Stripe'
       ]
     },
     {
@@ -88,10 +83,9 @@ const Projects = () => {
       category: 'Full‑Stack',
       description: 'Starter kit SaaS complet: Auth, dashboard, billing Stripe, API, admin, docs.',
       longDescription:
-        'De l’idée à un SaaS opérationnel en un week‑end: un kit complet prêt à cloner comprenant authentification (password, magic link, OAuth Google, reset, vérification email), ' +
-        'un dashboard moderne, la facturation Stripe (plans, webhooks, portail client), une API publique (clés, quotas, endpoint d’exemple), ' +
-        'un panneau d’admin (utilisateurs, rôles, logs d’audit) et un pack marketing (docs et listings). ' +
-        'Stack moderne: Next.js 15, TypeScript, Prisma, Auth.js, Stripe, Resend. Démo en ligne et mode démo.',
+        "De l'idée à un SaaS opérationnel en un week‑end: un kit complet prêt à cloner comprenant authentification (password, magic link, OAuth Google, reset, vérification email), " +
+        "un dashboard moderne, la facturation Stripe (plans, webhooks, portail client), une API publique (clés, quotas, endpoint d'exemple), " +
+        "un panneau d'admin (utilisateurs, rôles, logs d'audit) et un pack marketing (docs et listings). Démo en ligne et mode démo.",
       tags: ['Next.js', 'TypeScript', 'Prisma', 'Auth.js', 'Stripe', 'Resend'],
       image: new URL('../img/landing.png', import.meta.url).toString(),
       link: 'https://ssk-demo.vercel.app',
@@ -107,25 +101,57 @@ const Projects = () => {
     },
     {
       id: 5,
-      title: 'Coming Soon',
-      category: 'Upcoming',
-      description: 'Un nouveau projet est en préparation, les infos suivront bientôt.',
-      longDescription:
-        'Cette carte indique que la page 2 contient un projet en cours de finalisation. Dès que tous les éléments marketing et techniques sont prêts, je remplacerai ce contenu par les détails complets.',
-      tags: ['Coming Soon'],
-      image: gradientPlaceholderImage,
-      link: '#',
-      github: '#',
+      title: 'Site vitrine Fitness coaching',
+      category: 'Frontend',
+      description: 'site vitrine realisé pour Amir, coach sportif independant, présentant son activité et ses services avec formulaire de contact.',
+      longDescription: 'Site vitrine moderne pour un coach sportif indépendant. Intégration du formulaire de contact, mise en avant des offres et témoignages, CTA clairs. Déployé sur GitHub Pages avec SEO de base et performances optimisées.',
+      tags: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'GitHub Pages'],
+      image: new URL('../img/amir-fitness-site-vitrine.png', import.meta.url).toString(),
+      link: 'https://iguerchal.github.io/amir-fitness-site-vitrine',
+      github: 'https://github.com/iguerchal/amir-fitness-site-vitrine',
       features: [
-        'Story en attente',
-        'Contenu modifiable rapidement',
-        'CTA désactivés (#)',
-        'Design prêt pour les futures infos'
+        'Héros clair avec proposition de valeur',
+        'Présentation des offres de coaching',
+        'Témoignages clients',
+        'Formulaire de contact',
+        'Design responsive (mobile‑first)',
+        'SEO de base (métadonnées, balises sémantiques)',
+        'Déploiement GitHub Pages'
       ]
-    }
+    },
+    {
+      id: 6,
+      title: 'MoodBoard Studio — Outil de moodboards UI/UX',
+      category: 'Frontend',
+      description: 'Création de moodboards UI/UX avec export image/PDF, IA (mock), layouts et QA.',
+      longDescription:
+        'MoodBoard Studio est un outil React/TypeScript permettant de composer rapidement des moodboards pour des projets UI/UX. ' +
+        'Il intègre une IA simulée pour générer palettes, typographies et éléments, des arrangeurs de layout (Grid, Masonry, Circle Pack, Editorial) et un auto‑arrange. ' +
+        'L’export avancé prend en charge PNG/JPG/WebP/SVG et PDF (pages palette/assets). Les Google Fonts sont chargées dynamiquement et l’app persiste thème, layout et éléments localement. ' +
+        'Un Contrast Checker (WCAG) facilite l’accessibilité, une Command Palette (Cmd/Ctrl+K) accélère les actions et un Story Mode permet de présenter le board sous forme de timeline.',
+      tags: ['React', 'TypeScript', 'Vite', 'shadcn/ui', 'Radix UI', 'Framer Motion', 'Tailwind CSS', 'html-to-image', 'jsPDF'],
+      image: new URL('../img/moodboard_studio_thumbnail.PNG', import.meta.url).toString(),
+      link: 'https://iguerchal.github.io/Moodboard_Studio',
+      github: 'https://github.com/iguerchal/Moodboard_Studio',
+      features: [
+        'Drag & Drop (texte, couleurs, formes)',
+        'IA (mock) Prompt‑to‑Board et suggestions (palettes, typos, éléments)',
+        'Arrangeurs: Grid, Masonry, Circle Pack, Editorial, Auto‑arrange',
+        'Export image (PNG/JPG/WebP/SVG) et PDF (palette + assets)',
+        'Google Fonts dynamiques; changement de police par bloc',
+        'Persistance locale (thème, layout, éléments) et Command Palette',
+        'Contrast Checker (WCAG) avec correction auto',
+        'Story Mode: timeline et lecture auto'
+      ]
+    },
+
   ];
 
   type ProjectItem = (typeof projects)[number];
+
+  const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
+  const [currentPage, setCurrentPage] = useState(0);
+
   const projectsPerPage = 4;
   const projectPages: ProjectItem[][] = [];
 
@@ -260,7 +286,7 @@ const Projects = () => {
               variant="ghost"
               size="sm"
               type="button"
-              onClick={(event) => {
+              onClick={(event: React.MouseEvent<HTMLButtonElement>) => {
                 event.preventDefault();
                 setCurrentPage((prev) => Math.max(0, prev - 1));
               }}
@@ -276,7 +302,7 @@ const Projects = () => {
               variant="ghost"
               size="sm"
               type="button"
-              onClick={(event) => {
+              onClick={(event: React.MouseEvent<HTMLButtonElement>) => {
                 event.preventDefault();
                 setCurrentPage((prev) => Math.min(projectPages.length - 1, prev + 1));
               }}
