@@ -144,7 +144,24 @@ const Projects = () => {
         'Story Mode: timeline et lecture auto'
       ]
     },
-
+    {
+      id: 7,
+      title: 'Shiloh Technologies',
+      category: 'Full-Stack / 3D Web',
+      description: 'Site web immersif pour Shiloh Technologies, cabinet indépendant de conseil en sécurisation des décisions financières critiques.',
+      longDescription: 'Plateforme web développée pour Shiloh Technologies, un cabinet indépendant dédié à la sécurisation des décisions financières critiques et à l\'analyse de risques. Le site, conçu avec Next.js et React Three Fiber, offre une expérience utilisateur premium grâce à un globe terrestre 3D interactif (react-globe.gl) conçu pour illustrer leur approche. L\'intégration complète avec Stripe assure une gestion sécurisée des services. Le design global reflète le positionnement haut de gamme du cabinet, alliant rigueur institutionnelle et modernité technologique.',
+      tags: ['Next.js', 'React', 'Three.js', 'Stripe', 'Tailwind CSS'],
+      image: new URL('../img/shiloh_couverture.png', import.meta.url).toString(),
+      link: 'https://www.shiloh-technologies.com/',
+      github: '#',
+      features: [
+        'Présentation haut de gamme des services de conseil en investissement',
+        'Expérience utilisateur immersive avec globe interactif 3D (Three.js)',
+        'Système de paiement sécurisé via Stripe',
+        'Architecture performante avec Next.js',
+        'Design premium et responsive pour cibler une clientèle de dirigeants'
+      ]
+    }
   ];
 
   type ProjectItem = (typeof projects)[number];
