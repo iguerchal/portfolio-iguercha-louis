@@ -1,0 +1,25 @@
+{
+  "name": "Louis Iguercha — Développeur Web Freelance",
+  "short_name": "Louis Iguercha",
+  "description": "Portfolio de Louis Iguercha, développeur web freelance à Montpellier. Sites, applications et SaaS modernes en React, TypeScript, Next.js.",
+  "start_url": "/portfolio-iguercha-louis/",
+  "scope": "/portfolio-iguercha-louis/",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#8a2be2",
+  "lang": "fr",
+  "icons": [
+    {
+      "src": "/portfolio-iguercha-louis/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/portfolio-iguercha-louis/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

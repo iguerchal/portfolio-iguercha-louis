@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Louis Iguercha — Redirection…</title>
+    <meta name="robots" content="noindex" />
+    <script type="text/javascript">
+      // GitHub Pages SPA redirect:
+      // Stocke la route demandée dans sessionStorage puis redirige vers index.html
+      // qui pourra la rejouer (utile si tu ajoutes du routing plus tard).
+      // Pour ce site (SPA à ancres), on retombe simplement sur l'accueil.
+      (function () {
+        var basePath = '/portfolio-iguercha-louis/';
+        sessionStorage.redirect = location.href;
+        location.replace(basePath);
+      })();
+    </script>
+  </head>
+  <body>
+    <p>Redirection vers <a href="/portfolio-iguercha-louis/">le portfolio de Louis Iguercha</a>…</p>
+  </body>
+</html>
