@@ -145,6 +145,29 @@ const Projects = () => {
       ]
     },
     {
+      id: 8,
+      title: 'League Of Perpignan',
+      category: 'Discord Bot / Backend',
+      description: 'Bot Discord de gestion de recrutement esport : tournois, équipes, dashboard temps réel et système de tickets intégré.',
+      longDescription:
+        'League Of Perpignan est un bot Discord complet pour la gestion de tournois et du recrutement esport. Il permet aux organisateurs de créer des tournois avec limite de slots, aux capitaines de poster des annonces "Cherche Joueurs" et aux joueurs individuels de poster des annonces "Cherche Équipe". ' +
+        'Le bot automatise l\'ensemble du workflow : candidatures, acceptation/refus avec notifications DM, renommage automatique des membres avec préfixe d\'équipe, création de canaux privés par équipe, et attribution du rôle "Compétiteur". ' +
+        'Un dashboard mis à jour en temps réel affiche la progression des équipes et les places disponibles. Le système inclut également des logs d\'audit configurables, des panels de self-rôle, un builder d\'embeds, un système de tickets et des salons vocaux temporaires. Déployé sur Railway avec SQLite pour la persistance des données.',
+      tags: ['Node.js', 'Discord.js v14', 'SQLite', 'Railway', 'JavaScript'],
+      image: new URL('../img/lop_couv_portfolio.png', import.meta.url).toString(),
+      link: 'https://discord.gg/T7ujE3uSMY',
+      github: '#',
+      features: [
+        'Gestion de tournois avec slots configurables et boutons interactifs',
+        'Double système de recrutement : "Cherche Joueurs" (capitaine) et "Cherche Équipe" (solo)',
+        'Dashboard temps réel mis à jour automatiquement (équipes, slots, joueurs libres)',
+        'Canaux privés par équipe créés automatiquement avec notifications join/leave',
+        'Flux de candidature atomique : application → acceptation/refus → rôles et pseudos auto',
+        'Système de tickets avec questions personnalisées et transcription automatique',
+        'Salons vocaux temporaires, self-rôle panels, builder d\'embeds et audit logs'
+      ]
+    },
+    {
       id: 7,
       title: 'Shiloh Technologies',
       category: 'Full-Stack / 3D Web',
@@ -213,7 +236,9 @@ const Projects = () => {
                 <div className="relative overflow-hidden">
                   <ImageWithFallback
                     src={project.image}
-                    alt={project.title}
+                    alt={`Capture d'écran du projet ${project.title} — ${project.category} réalisé par Louis Iguercha`}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -374,7 +399,9 @@ const Projects = () => {
                 <div className="relative">
                   <ImageWithFallback
                     src={selectedProject.image}
-                    alt={selectedProject.title}
+                    alt={`Aperçu détaillé du projet ${selectedProject.title} — ${selectedProject.category}`}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-64 object-cover rounded-lg"
                   />
                 </div>

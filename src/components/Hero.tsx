@@ -4,7 +4,7 @@ import { ArrowRight, Download } from 'lucide-react';
 import { Button } from './ui/button';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 // @ts-ignore - allow space in filename import
-import profileImg from '../img/IGUERCHA Louis.png';
+import profileImg from '../img/moi cv.png';
 
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
@@ -78,7 +78,7 @@ const Hero = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
               >
-                Creative developer — Full-stack
+                Développeur Web Freelance Full-Stack à Montpellier
               </motion.span>
             </motion.h1>
 
@@ -140,7 +140,9 @@ const Hero = () => {
               >
                 <ImageWithFallback
                   src={profileImg}
-                  alt="Portrait de Louis Iguercha"
+                  alt="Louis Iguercha, développeur web freelance full-stack basé à Montpellier"
+                  fetchPriority="high"
+                  decoding="async"
                   className="w-full h-full object-cover"
                 />
               </motion.div>
