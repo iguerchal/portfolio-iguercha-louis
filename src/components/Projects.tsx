@@ -257,6 +257,7 @@ const Projects = () => {
                       variant="secondary"
                       className="glass-morphism"
                       onClick={() => setSelectedProject(project)}
+                      aria-label={`Voir les détails du projet ${project.title}`}
                     >
                       <Eye className="h-4 w-4" />
                     </Button>
@@ -391,6 +392,7 @@ const Projects = () => {
                     variant="ghost"
                     onClick={() => setSelectedProject(null)}
                     className="text-muted-foreground hover:text-primary"
+                    aria-label="Fermer la fenêtre"
                   >
                     <X className="h-6 w-6" />
                   </Button>

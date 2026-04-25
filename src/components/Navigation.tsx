@@ -95,6 +95,7 @@ const Navigation = () => {
               size="icon"
               onClick={toggleTheme}
               className="text-muted-foreground hover:text-primary"
+              aria-label={isDark ? 'Activer le mode clair' : 'Activer le mode sombre'}
             >
               {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
@@ -106,6 +107,8 @@ const Navigation = () => {
                 size="icon"
                 onClick={() => setIsOpen(!isOpen)}
                 className="text-muted-foreground hover:text-primary"
+                aria-label={isOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+                aria-expanded={isOpen}
               >
                 {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </Button>

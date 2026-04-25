@@ -227,3 +227,15 @@
 html {
   font-size: var(--font-size);
 }
+
+/* Accessibility: brighter purple for text usage to pass WCAG AA contrast on dark backgrounds.
+   Background usage of --primary (#8a2be2) keeps its original color on filled buttons. */
+.text-primary {
+  color: #c084fc;
+}
+.hover\:text-primary:hover {
+  color: #c084fc;
+}
+.border-primary\/50 {
+  border-color: rgba(192, 132, 252, 0.6);
+}
