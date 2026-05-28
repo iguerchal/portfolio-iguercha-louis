@@ -6,7 +6,11 @@ import { Button } from './ui/button';
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(() => {
+    if (typeof window === 'undefined') return true;
+    const saved = localStorage.getItem('theme');
+    return saved ? saved === 'dark' : true;
+  });
 
   const navItems = [
     { id: 'home', label: 'Accueil' },
@@ -47,6 +51,7 @@ const Navigation = () => {
     const next = !isDark;
     setIsDark(next);
     document.documentElement.classList.toggle('dark', next);
+    localStorage.setItem('theme', next ? 'dark' : 'light');
   };
 
   return (
@@ -94,7 +99,7 @@ const Navigation = () => {
               variant="ghost"
               size="icon"
               onClick={toggleTheme}
-              className="text-muted-foreground hover:text-primary"
+              className="text-muted-foreground hover:text-primary hover:bg-primary/10"
               aria-label={isDark ? 'Activer le mode clair' : 'Activer le mode sombre'}
             >
               {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
@@ -106,7 +111,7 @@ const Navigation = () => {
                 variant="ghost"
                 size="icon"
                 onClick={() => setIsOpen(!isOpen)}
-                className="text-muted-foreground hover:text-primary"
+                className="text-muted-foreground hover:text-primary hover:bg-primary/10"
                 aria-label={isOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
                 aria-expanded={isOpen}
               >

@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { motion } from 'motion/react';
 import { Dialog, DialogContent, DialogOverlay, DialogTrigger, DialogClose, DialogTitle } from './ui/dialog';
-import { Download, Star, Maximize2, X } from 'lucide-react';
+import { Star, Maximize2, X } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card } from './ui/card';
 
@@ -117,7 +117,7 @@ const About = () => {
           aria-label={`Voir la compétence ${n.name}`}
         >
           <Star className="text-primary-foreground" size={Math.min(n.size, 14)} />
-          <span className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 bg-background rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity shadow-md border border-border">
+          <span className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 bg-popover text-popover-foreground rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity shadow-md border border-border">
             {n.name}
           </span>
         </motion.button>
@@ -298,7 +298,7 @@ const About = () => {
                               aria-label={`Voir la compétence ${n.name}`}
                             >
                               <Star className="text-primary-foreground" size={Math.min(n.size + 6, 18)} />
-                              <span className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 bg-background/90 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity shadow-md border border-border">
+                              <span className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 bg-popover/95 text-popover-foreground rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity shadow-md border border-border">
                                 {n.name}
                               </span>
                             </motion.button>

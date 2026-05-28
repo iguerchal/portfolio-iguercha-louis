@@ -3143,3 +3143,39 @@ html {
     transform: translate3d(var(--tw-exit-translate-x, 0), var(--tw-exit-translate-y, 0), 0) scale3d(var(--tw-exit-scale, 1), var(--tw-exit-scale, 1), var(--tw-exit-scale, 1)) rotate(var(--tw-exit-rotate, 0));
   }
 }
+
+/* ───────────────────────────────────────────────────────────────────────────
+   Project additions — this build ships a PRE-COMPILED Tailwind v4 stylesheet
+   (no Tailwind compiler runs at build time), so utility classes that were not
+   already used in the source are absent. The rules below add the few new
+   utilities introduced by recent UI fixes, written exactly as Tailwind v4
+   would emit them. Unlayered → they win over the layered utilities above.
+   ─────────────────────────────────────────────────────────────────────────── */
+
+/* Prevent a transient horizontal scrollbar on mobile: several sections animate
+   in from off-screen (Framer Motion initial x:-50) and overflow the viewport
+   until scrolled into view. `clip` removes the scrollbar without creating a
+   scroll container or affecting vertical scrolling / sticky / fixed elements. */
+html, body { overflow-x: clip; }
+
+/* Theme-aware primary text for WCAG AA contrast.
+   Light: deeper purple on light backgrounds. Dark: bright luminous purple. */
+.text-primary { color: #7c22ce; }
+.hover\:text-primary:hover { color: #7c22ce; }
+.dark .text-primary { color: #c084fc; }
+.dark .hover\:text-primary:hover { color: #c084fc; }
+
+/* Spacing utility used by the "popular" services card */
+.pt-16 { padding-top: calc(var(--spacing) * 16); }
+
+/* Responsive portrait sizing (Hero) — base mobile size + sm/lg steps */
+.w-56 { width: calc(var(--spacing) * 56); }
+.h-56 { height: calc(var(--spacing) * 56); }
+@media (width >= 40rem) {
+  .sm\:w-72 { width: calc(var(--spacing) * 72); }
+  .sm\:h-72 { height: calc(var(--spacing) * 72); }
+}
+@media (width >= 64rem) {
+  .lg\:w-80 { width: calc(var(--spacing) * 80); }
+  .lg\:h-80 { height: calc(var(--spacing) * 80); }
+}

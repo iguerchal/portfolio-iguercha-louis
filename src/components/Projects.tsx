@@ -7,9 +7,6 @@ import { Badge } from './ui/badge';
 import { Dialog, DialogContent } from './ui/dialog';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
-const gradientPlaceholderImage =
-  'data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22800%22%20height%3D%22420%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23c084fc%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%231d1836%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23g)%22/%3E%3C/svg%3E';
-
 const Projects = () => {
   const projects = [
     {
@@ -298,7 +295,7 @@ const Projects = () => {
                       <Button
                         size="icon"
                         variant="ghost"
-                        className="text-muted-foreground hover:text-primary"
+                        className="text-muted-foreground hover:text-primary hover:bg-primary/10"
                         onClick={() => isHttpUrl(project.link) && window.open(project.link!, '_blank')}
                         disabled={!isHttpUrl(project.link)}
                         aria-label="Ouvrir la démo"
@@ -308,7 +305,7 @@ const Projects = () => {
                       <Button
                         size="icon"
                         variant="ghost"
-                        className="text-muted-foreground hover:text-primary"
+                        className="text-muted-foreground hover:text-primary hover:bg-primary/10"
                         onClick={() => isHttpUrl(project.github) && window.open(project.github!, '_blank')}
                         disabled={!isHttpUrl(project.github)}
                         aria-label="Voir le code"
@@ -334,6 +331,7 @@ const Projects = () => {
                 setCurrentPage((prev) => Math.max(0, prev - 1));
               }}
               disabled={currentPage === 0}
+              aria-label="Page précédente"
               className="text-foreground hover:bg-white/10 data-[disabled]:text-muted-foreground/50 dark:text-white"
             >
               <ChevronLeft className="h-4 w-4" />
@@ -350,6 +348,7 @@ const Projects = () => {
                 setCurrentPage((prev) => Math.min(projectPages.length - 1, prev + 1));
               }}
               disabled={currentPage === projectPages.length - 1}
+              aria-label="Page suivante"
               className="text-foreground hover:bg-white/10 data-[disabled]:text-muted-foreground/50 dark:text-white"
             >
               <ChevronRight className="h-4 w-4" />
@@ -391,7 +390,7 @@ const Projects = () => {
                     size="icon"
                     variant="ghost"
                     onClick={() => setSelectedProject(null)}
-                    className="text-muted-foreground hover:text-primary"
+                    className="text-muted-foreground hover:text-primary hover:bg-primary/10"
                     aria-label="Fermer la fenêtre"
                   >
                     <X className="h-6 w-6" />

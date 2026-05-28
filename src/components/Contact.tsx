@@ -198,7 +198,7 @@ const Contact = () => {
                       <div className="space-y-2">
                         <Label htmlFor="subject">Sujet</Label>
                         <Select onValueChange={(value) => handleInputChange('subject', value)}>
-                          <SelectTrigger className="glass-morphism border-primary/20 focus:border-primary">
+                          <SelectTrigger id="subject" aria-label="Sujet" className="glass-morphism border-primary/20 focus:border-primary">
                             <SelectValue placeholder="Sélectionnez un sujet" />
                           </SelectTrigger>
                           <SelectContent className="glass-morphism border-primary/20">

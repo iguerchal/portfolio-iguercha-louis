@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { motion } from 'motion/react';
 import { Badge } from './ui/badge';
 
@@ -53,34 +53,6 @@ const Skills = () => {
 
   const getSkillId = (name: string) => `skill-${name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
 
-  // Build constellation from all skills with deterministic polar layout (rings + angles)
-  const constellation = useMemo(() => {
-    const nodes = allSkills.map((s, index) => {
-      // Spread on 3 rings for density
-      const ring = index % 3; // 0,1,2
-      const radius = 28 + ring * 12; // percentages from center
-      const angle = (index / allSkills.length) * Math.PI * 2;
-      const cx = 50 + radius * Math.cos(angle) * 0.9; // clamp a bit
-      const cy = 50 + radius * Math.sin(angle) * 0.7;
-      const size = Math.max(8, Math.round((s.level / 100) * 14));
-      return {
-        name: s.name,
-        level: s.level,
-        x: Math.max(6, Math.min(94, cx)),
-        y: Math.max(6, Math.min(94, cy)),
-        size,
-      };
-    });
-
-    const edges: Array<[number, number]> = [];
-    // Connect sequential nodes and every 5th to create constellation graph
-    for (let i = 0; i < nodes.length; i++) {
-      edges.push([i, (i + 1) % nodes.length]);
-      edges.push([i, (i + 5) % nodes.length]);
-    }
-    return { nodes, edges };
-  }, [allSkills]);
-
   return (
     <section id="skills" className="py-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -124,7 +96,7 @@ const Skills = () => {
                 className="group"
               >
                 <Badge
-                  className="glass-morphism px-6 py-3 text-lg cursor-pointer relative overflow-hidden transition-all duration-300 hover:neon-glow-sm"
+                  className="glass-morphism text-foreground px-6 py-3 text-lg cursor-pointer relative overflow-hidden transition-all duration-300 hover:neon-glow-sm"
                   variant="secondary"
                   id={getSkillId(skill.name)}
                 >

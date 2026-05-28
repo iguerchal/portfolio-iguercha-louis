@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight, Download } from 'lucide-react';
+import { ArrowRight, Mail } from 'lucide-react';
 import { Button } from './ui/button';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 // @ts-ignore - allow space in filename import
@@ -120,7 +120,7 @@ const Hero = () => {
               >
                 <span className="flex items-center">
                   Me contacter
-                  <Download className="ml-2 h-5 w-5" />
+                  <Mail className="ml-2 h-5 w-5" />
                 </span>
               </Button>
             </motion.div>
@@ -135,7 +135,7 @@ const Hero = () => {
           >
             <div className="relative">
               <motion.div
-                className="w-80 h-80 rounded-full glass-morphism flex items-center justify-center relative overflow-hidden"
+                className="w-56 h-56 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full glass-morphism flex items-center justify-center relative overflow-hidden"
                 whileHover={{ scale: 1.05 }}
               >
                 <ImageWithFallback
@@ -149,7 +149,7 @@ const Hero = () => {
 
               {/* Orbiting elements */}
               <motion.div
-                className="absolute inset-0 w-80 h-80"
+                className="absolute inset-0 w-56 h-56 sm:w-72 sm:h-72 lg:w-80 lg:h-80"
                 animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
               >

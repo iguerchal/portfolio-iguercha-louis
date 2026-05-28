@@ -10,8 +10,10 @@ import Footer from './components/Footer';
 
 export default function App() {
   useEffect(() => {
-    // Set dark mode by default
-    document.documentElement.classList.add('dark');
+    // Apply persisted theme; default to dark when no preference is stored
+    const saved = localStorage.getItem('theme');
+    const isDark = saved ? saved === 'dark' : true;
+    document.documentElement.classList.toggle('dark', isDark);
   }, []);
 
   return (

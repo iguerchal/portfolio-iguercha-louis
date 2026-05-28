@@ -127,7 +127,7 @@ const Services = () => {
                   </div>
                 )}
 
-                <div className="p-8 space-y-6">
+                <div className={`p-8 space-y-6 ${service.popular ? 'pt-16' : ''}`}>
                   {/* Icon */}
                   <div className={`w-16 h-16 rounded-full bg-gradient-to-r ${service.gradient} flex items-center justify-center text-white mb-4`}>
                     {service.icon}

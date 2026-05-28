@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Heart, ArrowUp } from 'lucide-react';
 import { Button } from './ui/button';
+import LegalNotice from './LegalNotice';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -33,6 +34,16 @@ const Footer = () => {
             <span>et beaucoup de café</span>
           </motion.div>
 
+          {/* Legal notice */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            viewport={{ once: true }}
+          >
+            <LegalNotice />
+          </motion.div>
+
           {/* Back to top */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -44,7 +55,7 @@ const Footer = () => {
               onClick={scrollToTop}
               variant="ghost"
               size="sm"
-              className="text-muted-foreground hover:text-primary group"
+              className="text-muted-foreground hover:text-primary hover:bg-primary/10 group"
             >
               <span className="mr-2">Haut de page</span>
               <ArrowUp className="h-4 w-4 group-hover:-translate-y-1 transition-transform" />
