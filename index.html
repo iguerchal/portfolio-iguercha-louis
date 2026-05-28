@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#8a2be2" />
 
+    <!-- Anti-FOUC: apply persisted theme before render (default dark) -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          document.documentElement.classList.toggle('dark', t ? t === 'dark' : true);
+        } catch (e) {}
+      })();
+    </script>
+
     <!-- Primary Meta Tags -->
     <title>Louis Iguercha — Développeur Web Freelance React/TypeScript à Montpellier</title>
     <meta name="description" content="Louis Iguercha, développeur web freelance à Montpellier. Création de sites, applications et SaaS modernes en React, TypeScript, Next.js. 4+ ans d'expérience, 50+ projets livrés." />
@@ -126,8 +136,8 @@
       ]
     }
     </script>
-    <script type="module" crossorigin src="/portfolio-iguercha-louis/assets/index-CiTKqY8X.js"></script>
-    <link rel="stylesheet" crossorigin href="/portfolio-iguercha-louis/assets/index-BSnmcEMw.css">
+    <script type="module" crossorigin src="/portfolio-iguercha-louis/assets/index-CzTRhhXC.js"></script>
+    <link rel="stylesheet" crossorigin href="/portfolio-iguercha-louis/assets/index-DYj6oH7g.css">
   </head>
 
   <body>
