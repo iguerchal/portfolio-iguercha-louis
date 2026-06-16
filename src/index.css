@@ -3145,7 +3145,7 @@ html {
 }
 
 /* ───────────────────────────────────────────────────────────────────────────
-   Project additions — this build ships a PRE-COMPILED Tailwind v4 stylesheet
+   Project additions: this build ships a PRE-COMPILED Tailwind v4 stylesheet
    (no Tailwind compiler runs at build time), so utility classes that were not
    already used in the source are absent. The rules below add the few new
    utilities introduced by recent UI fixes, written exactly as Tailwind v4
@@ -3168,7 +3168,7 @@ html, body { overflow-x: clip; }
 /* Spacing utility used by the "popular" services card */
 .pt-16 { padding-top: calc(var(--spacing) * 16); }
 
-/* Responsive portrait sizing (Hero) — base mobile size + sm/lg steps */
+/* Responsive portrait sizing (Hero): base mobile size + sm/lg steps */
 .w-56 { width: calc(var(--spacing) * 56); }
 .h-56 { height: calc(var(--spacing) * 56); }
 @media (width >= 40rem) {

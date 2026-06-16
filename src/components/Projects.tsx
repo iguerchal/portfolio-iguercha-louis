@@ -98,7 +98,7 @@ const Projects = () => {
     },
     {
       id: 9,
-      title: 'erxxwoxobxrsw — Boutique e‑commerce immersive',
+      title: 'erxxwoxobxrsw, boutique e‑commerce immersive',
       category: 'E‑commerce / Shopify',
       description: 'Refonte technique d’une boutique Shopify à l’univers VHS/horreur (erxxwoxobxrsw.com) : panier & checkout réparés, refactor du thème, sécurité, responsive et SEO.',
       longDescription:
@@ -122,7 +122,7 @@ const Projects = () => {
     },
     {
       id: 6,
-      title: 'MoodBoard Studio — Outil de moodboards UI/UX',
+      title: 'MoodBoard Studio, outil de moodboards UI/UX',
       category: 'Frontend',
       description: 'Création de moodboards UI/UX avec export image/PDF, IA (mock), layouts et QA.',
       longDescription:
@@ -257,7 +257,7 @@ const Projects = () => {
                 <div className="relative overflow-hidden">
                   <ImageWithFallback
                     src={project.image}
-                    alt={`Capture d'écran du projet ${project.title} — ${project.category} réalisé par Louis Iguercha`}
+                    alt={`Capture d'écran du projet ${project.title}, ${project.category} réalisé par Louis Iguercha`}
                     loading="lazy"
                     decoding="async"
                     className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
@@ -424,7 +424,7 @@ const Projects = () => {
                 <div className="relative">
                   <ImageWithFallback
                     src={selectedProject.image}
-                    alt={`Aperçu détaillé du projet ${selectedProject.title} — ${selectedProject.category}`}
+                    alt={`Aperçu détaillé du projet ${selectedProject.title}, ${selectedProject.category}`}
                     loading="lazy"
                     decoding="async"
                     className="w-full h-64 object-cover rounded-lg"

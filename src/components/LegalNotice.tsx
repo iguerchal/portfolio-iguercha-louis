@@ -40,9 +40,9 @@ const LegalNotice = () => {
           <section className="space-y-1">
             <h3 className="text-base font-semibold text-foreground">Éditeur du site</h3>
             <p>
-              Louis Iguercha — Micro-entreprise (auto-entrepreneur). SIRET :{' '}
+              Louis Iguercha, micro-entreprise (auto-entrepreneur). SIRET :{' '}
               <span className="text-foreground">99230872600015</span>. Siège : Montpellier,
-              France — adresse du siège communiquée sur demande (siège au domicile, non publié
+              France, adresse du siège communiquée sur demande (siège au domicile, non publié
               pour raisons de confidentialité, conformément au droit applicable aux entrepreneurs
               individuels). Email :{' '}
               <a href="mailto:louis.leborgne2@gmail.com" className="text-primary hover:underline">
@@ -64,7 +64,7 @@ const LegalNotice = () => {
           <section className="space-y-1">
             <h3 className="text-base font-semibold text-foreground">Hébergeur</h3>
             <p>
-              GitHub Pages — GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107,
+              GitHub Pages, GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107,
               USA.
             </p>
           </section>

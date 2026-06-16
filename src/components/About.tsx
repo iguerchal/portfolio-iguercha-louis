@@ -188,7 +188,7 @@ const About = () => {
                 Je suis un développeur créatif qui fait le lien entre design, technologie et interactivité. Fort de plus de 4 ans d’expérience, je conçois des applications, des jeux et des expériences web immersives, à la fois esthétiques, performantes et intuitives.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Ma passion est d’explorer l’intersection entre créativité, code et expérience utilisateur, en repoussant sans cesse les limites du possible — que ce soit sur le web, dans une app ou dans un jeu.
+                Ma passion est d’explorer l’intersection entre créativité, code et expérience utilisateur, en repoussant sans cesse les limites du possible, que ce soit sur le web, dans une app ou dans un jeu.
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 Je crois qu’un excellent produit numérique doit être fonctionnel, fluide et plaisant à utiliser, quelle que soit sa plateforme.
