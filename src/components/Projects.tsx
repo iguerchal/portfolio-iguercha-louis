@@ -97,23 +97,27 @@ const Projects = () => {
       ]
     },
     {
-      id: 5,
-      title: 'Site vitrine Fitness coaching',
-      category: 'Frontend',
-      description: 'site vitrine realisé pour Amir, coach sportif independant, présentant son activité et ses services avec formulaire de contact.',
-      longDescription: 'Site vitrine moderne pour un coach sportif indépendant. Intégration du formulaire de contact, mise en avant des offres et témoignages, CTA clairs. Déployé sur GitHub Pages avec SEO de base et performances optimisées.',
-      tags: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'GitHub Pages'],
-      image: new URL('../img/amir-fitness-site-vitrine.png', import.meta.url).toString(),
-      link: 'https://iguerchal.github.io/amir-fitness-site-vitrine',
-      github: 'https://github.com/iguerchal/amir-fitness-site-vitrine',
+      id: 9,
+      title: 'erxxwoxobxrsw — Boutique e‑commerce immersive',
+      category: 'E‑commerce / Shopify',
+      description: 'Refonte technique d’une boutique Shopify à l’univers VHS/horreur (erxxwoxobxrsw.com) : panier & checkout réparés, refactor du thème, sécurité, responsive et SEO.',
+      longDescription:
+        'Remise à niveau technique complète d’une boutique Shopify (thème Horizon, architecture OS 2.0 + Blocks API) dotée d’une direction artistique « Visual Novel » VHS/horreur entièrement custom. ' +
+        'Le storefront avait été vibe‑codé : le tunnel d’achat était factice (faux panier, prix codés en dur) et les scripts du thème n’étaient plus chargés sur les pages publiques. ' +
+        'Intervention : réparation complète du panier AJAX (Cart AJAX API) et du checkout, branchement des boutons de taille sur les vrais variants produits (prix et stock réels, data‑driven), refactor du thème Liquid et suppression du code mort, audit de sécurité (XSS, CSP, secrets, conformité RGPD via la Customer Privacy API), optimisation responsive mobile/tablette et Lighthouse (performance, accessibilité 100, SEO), et SEO technique (titres sémantiques, meta, données structurées JSON‑LD, Open Graph). ' +
+        'L’identité visuelle narrative du client a été préservée à l’identique tout en fiabilisant et sécurisant la boutique pour la mise en production.',
+      tags: ['Shopify', 'Liquid', 'Horizon', 'JavaScript', 'Web Components', 'SEO', 'Responsive'],
+      image: new URL('../img/boutique-vhs-couverture.jpg', import.meta.url).toString(),
+      link: 'https://www.erxxwoxobxrsw.com/',
+      github: '#',
       features: [
-        'Héros clair avec proposition de valeur',
-        'Présentation des offres de coaching',
-        'Témoignages clients',
-        'Formulaire de contact',
-        'Design responsive (mobile‑first)',
-        'SEO de base (métadonnées, balises sémantiques)',
-        'Déploiement GitHub Pages'
+        'Réparation complète du panier AJAX et du tunnel de checkout (Cart AJAX API)',
+        'Boutons de taille branchés sur les vrais variants produits (prix & stock réels, data‑driven)',
+        'Refactor du thème Liquid (Horizon, OS 2.0 + Blocks API) et suppression du code mort',
+        'Audit de sécurité : XSS, CSP, secrets, conformité RGPD (Customer Privacy API)',
+        'Optimisation responsive mobile/tablette + Lighthouse (perf, accessibilité 100, SEO)',
+        'SEO technique : titres sémantiques, meta, données structurées JSON‑LD, Open Graph',
+        'Direction artistique « Visual Novel » VHS/horreur préservée à l’identique'
       ]
     },
     {
@@ -180,6 +184,26 @@ const Projects = () => {
         'Système de paiement sécurisé via Stripe',
         'Architecture performante avec Next.js',
         'Design premium et responsive pour cibler une clientèle de dirigeants'
+      ]
+    },
+    {
+      id: 5,
+      title: 'Site vitrine Fitness coaching',
+      category: 'Frontend',
+      description: 'site vitrine realisé pour Amir, coach sportif independant, présentant son activité et ses services avec formulaire de contact.',
+      longDescription: 'Site vitrine moderne pour un coach sportif indépendant. Intégration du formulaire de contact, mise en avant des offres et témoignages, CTA clairs. Déployé sur GitHub Pages avec SEO de base et performances optimisées.',
+      tags: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'GitHub Pages'],
+      image: new URL('../img/amir-fitness-site-vitrine.png', import.meta.url).toString(),
+      link: 'https://iguerchal.github.io/amir-fitness-site-vitrine',
+      github: 'https://github.com/iguerchal/amir-fitness-site-vitrine',
+      features: [
+        'Héros clair avec proposition de valeur',
+        'Présentation des offres de coaching',
+        'Témoignages clients',
+        'Formulaire de contact',
+        'Design responsive (mobile‑first)',
+        'SEO de base (métadonnées, balises sémantiques)',
+        'Déploiement GitHub Pages'
       ]
     }
   ];
