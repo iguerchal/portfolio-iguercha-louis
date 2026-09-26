@@ -53,47 +53,25 @@ const Projects = () => {
       ]
     },
     {
-      id: 3,
-      title: 'RoCart Boutique – Catalogue produits',
-      category: 'Frontend',
-      description: 'Catalogue e‑commerce avec barre Hot Items défilante et filtres par rareté/prix.',
+      id: 10,
+      title: 'AssistCoachAI, générateur de séances de football par IA',
+      category: 'Full-Stack',
+      description: 'Application web (PWA) pour les coachs de football : séances d\'entraînement générées par IA avec schémas de terrain, gestion d\'équipe et de club, en 6 langues.',
       longDescription:
-        'Mise en avant d’un catalogue e‑commerce performant avec une barre « Hot Items » défilante (best‑sellers & nouveautés) et un système de filtres multi‑critères (rareté, prix, catégorie). ' +
-        'L’interface est responsive et orientée conversion, avec cartes produit, CTA clairs et SEO de base pour le trafic organique. ' +
-        'Architecture front propre en HTML/CSS/JavaScript, animations légères pour la mise en valeur des produits et structure scalable pour enrichir le catalogue.',
-      tags: ['HTML', 'CSS', 'JavaScript', 'Carousel', 'Filtrage', 'Responsive', 'SEO'],
-      image: new URL('../img/rocart shop.PNG', import.meta.url).toString(),
-      link: 'https://iguerchal.github.io/test_landing_page',
-      github: 'https://github.com/iguerchal/test_landing_page',
+        'AssistCoachAI est une application web progressive (PWA) qui accompagne les entraîneurs de football dans la préparation de leurs séances. Le coach renseigne son contexte (catégorie, effectif, matériel, dimensions du terrain, temps disponible) et l\'IA génère en quelques instants une séance complète, structurée et illustrée par des schémas de terrain à l\'échelle, du futsal au foot à 11. ' +
+        'Au-delà du générateur, l\'application centralise la vie de l\'équipe et du club : gestion de l\'effectif, planning, convocations, suivi du championnat, suivi santé et portail dédié aux joueurs et aux parents. ' +
+        'Disponible en 6 langues pour le marché européen et installable sur mobile avec notifications push. Intégration Stripe pour la monétisation via packs de crédits et abonnements. Une solution pensée par des coachs diplômés pour faire gagner un temps précieux aux entraîneurs.',
+      tags: ['Next.js', 'React', 'TypeScript', 'Supabase', 'Claude API', 'Stripe', 'PWA', 'Vercel'],
+      image: new URL('../img/assistcoachai-couverture.jpg', import.meta.url).toString(),
+      link: 'https://assistcoachai.com/',
+      github: '#',
       features: [
-        'Barre « Hot Items » défilante',
-        'Filtres par rareté, prix et catégorie',
-        'Cartes produit visuelles avec highlights',
-        'CTA orientés conversion (voir/acheter)',
-        'Design responsive mobile‑first',
-        'Bonnes pratiques SEO de base'
-      ]
-    },
-    {
-      id: 4,
-      title: 'SaaS Starter Kit Factory',
-      category: 'Full‑Stack',
-      description: 'Starter kit SaaS complet: Auth, dashboard, billing Stripe, API, admin, docs.',
-      longDescription:
-        "De l'idée à un SaaS opérationnel en un week‑end: un kit complet prêt à cloner comprenant authentification (password, magic link, OAuth Google, reset, vérification email), " +
-        "un dashboard moderne, la facturation Stripe (plans, webhooks, portail client), une API publique (clés, quotas, endpoint d'exemple), " +
-        "un panneau d'admin (utilisateurs, rôles, logs d'audit) et un pack marketing (docs et listings). Démo en ligne et mode démo.",
-      tags: ['Next.js', 'TypeScript', 'Prisma', 'Auth.js', 'Stripe', 'Resend'],
-      image: new URL('../img/landing.png', import.meta.url).toString(),
-      link: 'https://ssk-demo.vercel.app',
-      github: 'https://louigch.gumroad.com/l/rrddn',
-      features: [
-        'Auth complète (password, magic link, OAuth Google, reset, vérification email)',
-        'Dashboard moderne prêt à brander',
-        'Billing Stripe (plans, webhooks, portail client)',
-        'API publique (clés API, quotas, endpoint d’exemple)',
-        'Admin panel (utilisateurs, rôles, logs d’audit)',
-        'Docs & marketing (guides, listings, captures) et mode démo'
+        'Génération de séances d\'entraînement par IA (Claude) selon le contexte du coach',
+        'Schémas de terrain à l\'échelle, du futsal au foot à 11',
+        'Gestion d\'équipe et de club : effectif, planning, convocations, championnat',
+        'Portail joueur/parent et suivi santé',
+        'Application installable (PWA) avec notifications push',
+        'Monétisation Stripe : packs de crédits et abonnements mensuels/annuels'
       ]
     },
     {
@@ -118,6 +96,28 @@ const Projects = () => {
         'Optimisation responsive mobile/tablette + Lighthouse (perf, accessibilité 100, SEO)',
         'SEO technique : titres sémantiques, meta, données structurées JSON‑LD, Open Graph',
         'Direction artistique « Visual Novel » VHS/horreur préservée à l’identique'
+      ]
+    },
+    {
+      id: 4,
+      title: 'SaaS Starter Kit Factory',
+      category: 'Full‑Stack',
+      description: 'Starter kit SaaS complet: Auth, dashboard, billing Stripe, API, admin, docs.',
+      longDescription:
+        "De l'idée à un SaaS opérationnel en un week‑end: un kit complet prêt à cloner comprenant authentification (password, magic link, OAuth Google, reset, vérification email), " +
+        "un dashboard moderne, la facturation Stripe (plans, webhooks, portail client), une API publique (clés, quotas, endpoint d'exemple), " +
+        "un panneau d'admin (utilisateurs, rôles, logs d'audit) et un pack marketing (docs et listings). Démo en ligne et mode démo.",
+      tags: ['Next.js', 'TypeScript', 'Prisma', 'Auth.js', 'Stripe', 'Resend'],
+      image: new URL('../img/landing.png', import.meta.url).toString(),
+      link: 'https://ssk-demo.vercel.app',
+      github: 'https://louigch.gumroad.com/l/rrddn',
+      features: [
+        'Auth complète (password, magic link, OAuth Google, reset, vérification email)',
+        'Dashboard moderne prêt à brander',
+        'Billing Stripe (plans, webhooks, portail client)',
+        'API publique (clés API, quotas, endpoint d’exemple)',
+        'Admin panel (utilisateurs, rôles, logs d’audit)',
+        'Docs & marketing (guides, listings, captures) et mode démo'
       ]
     },
     {
@@ -204,6 +204,28 @@ const Projects = () => {
         'Design responsive (mobile‑first)',
         'SEO de base (métadonnées, balises sémantiques)',
         'Déploiement GitHub Pages'
+      ]
+    },
+    {
+      id: 3,
+      title: 'RoCart Boutique – Catalogue produits',
+      category: 'Frontend',
+      description: 'Catalogue e‑commerce avec barre Hot Items défilante et filtres par rareté/prix.',
+      longDescription:
+        'Mise en avant d’un catalogue e‑commerce performant avec une barre « Hot Items » défilante (best‑sellers & nouveautés) et un système de filtres multi‑critères (rareté, prix, catégorie). ' +
+        'L’interface est responsive et orientée conversion, avec cartes produit, CTA clairs et SEO de base pour le trafic organique. ' +
+        'Architecture front propre en HTML/CSS/JavaScript, animations légères pour la mise en valeur des produits et structure scalable pour enrichir le catalogue.',
+      tags: ['HTML', 'CSS', 'JavaScript', 'Carousel', 'Filtrage', 'Responsive', 'SEO'],
+      image: new URL('../img/rocart shop.PNG', import.meta.url).toString(),
+      link: 'https://iguerchal.github.io/test_landing_page',
+      github: 'https://github.com/iguerchal/test_landing_page',
+      features: [
+        'Barre « Hot Items » défilante',
+        'Filtres par rareté, prix et catégorie',
+        'Cartes produit visuelles avec highlights',
+        'CTA orientés conversion (voir/acheter)',
+        'Design responsive mobile‑first',
+        'Bonnes pratiques SEO de base'
       ]
     }
   ];
